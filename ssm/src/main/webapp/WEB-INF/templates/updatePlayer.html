@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改选手</title>
+    <!--导入BootStrap来美化界面-->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    <small>IG战队------修改选手</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <form th:action="@{/updateOne}" method="post">
+        <div class="form-group">
+            <label>选手ID</label>
+            <input type="text" class="form-control" name="playerId" placeholder="输入要修改的选手ID" required>
+        </div>
+        <div class="form-group">
+            <label>游戏ID</label>
+            <input type="text" class="form-control" name="playerTeamName" placeholder="游戏ID" required>
+        </div>
+        <div class="form-group">
+            <label>真实姓名</label>
+            <input type="text" class="form-control" name="playerRealName" placeholder="真实姓名" required>
+        </div>
+        <div class="form-group">
+            <label>年龄</label>
+            <input type="text" class="form-control" name="playerAge" placeholder="年龄" required>
+        </div>
+        <div class="form-group">
+            <label>评价</label>
+            <input type="text" class="form-control" name="detail" placeholder="评价" required>
+        </div>
+        <button type="submit" class="btn btn-default">更新选手信息</button>
+    </form>
+</div>
+</body>
+</html>

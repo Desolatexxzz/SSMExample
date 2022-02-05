@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhouyue.dao.InvictusGamingMapper">
+    <insert id="addPlayer" parameterType="InvictusGaming">
+        insert into invictus_gaming (playerTeamName, playerRealName, playerAge, detail)
+        values (#{playerTeamName}, #{playerRealName}, #{playerAge}, #{detail});
+    </insert>
+    <delete id="removePlayer" parameterType="int">
+        delete
+        from invictus_gaming
+        where playerId=#{playerId};
+    </delete>
+    <update id="updatePlayer" parameterType="InvictusGaming">
+        update invictus_gaming
+        set playerTeamName = #{playerTeamName},
+            playerRealName = #{playerRealName},
+            playerAge = #{playerAge},
+            detail = #{detail}
+        where playerId = #{playerId};
+    </update>
+    <select id="selectPlayer" resultType="InvictusGaming">
+        select *
+        from invictus_gaming
+        where playerId = #{playerId};
+    </select>
+    <select id="selectAll" resultType="InvictusGaming">
+        select *
+        from invictus_gaming;
+    </select>
+
+</mapper>
